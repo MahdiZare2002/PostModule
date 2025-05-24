@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostModule.Domain", "PostMo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostModule.Application.Contract", "PostModule.Application.Contract\PostModule.Application.Contract.csproj", "{999AC4E1-BCE0-4315-BE58-B84970476015}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PostModule.Application.Services", "PostModule.Application.Services\PostModule.Application.Services.csproj", "{6A60C887-33A2-4EB9-84A1-418FF22058FC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{999AC4E1-BCE0-4315-BE58-B84970476015}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{999AC4E1-BCE0-4315-BE58-B84970476015}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{999AC4E1-BCE0-4315-BE58-B84970476015}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6A60C887-33A2-4EB9-84A1-418FF22058FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6A60C887-33A2-4EB9-84A1-418FF22058FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6A60C887-33A2-4EB9-84A1-418FF22058FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6A60C887-33A2-4EB9-84A1-418FF22058FC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
