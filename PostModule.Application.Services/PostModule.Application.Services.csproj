@@ -6,4 +6,9 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PostModule.Application.Contract\PostModule.Application.Contract.csproj" />
+    <ProjectReference Include="..\PostModule.Domain\PostModule.Domain.csproj" />
+  </ItemGroup>
+
 </Project>
