@@ -1,4 +1,5 @@
 ﻿using PostModule.Domain.Common;
+using PostModule.Domain.StateEntity;
 
 namespace PostModule.Domain.CityEntity
 {
@@ -7,6 +8,8 @@ namespace PostModule.Domain.CityEntity
         public string Title { get; set; }
         public int StateId { get; set; }
         public bool Status { get; set; }
+        public State State { get; set; }
+
         public City(int stateId, string title, bool cityStatus = true)
         {
             Title = title;
