@@ -28,7 +28,7 @@ The project follows Onion Architecture and includes:
 1. Clone the repository:
 
    ```bash
-   1. git clone https://github.com/your-username/your-repo-name.git
-   2. cd your-repo-name
+   1. git clone https://github.com/MahdiZare2002/PostModule.git
+   2. cd PostModule
    3. dotnet ef database update
    4. dotnet run
