@@ -9,32 +9,32 @@ namespace PostModule.Application.Services
 {
     public class StateApplication : IStateApplication
     {
-        public bool Create(CreateStateModel command)
+        public Task<bool> Create(CreateStateModel command)
         {
             throw new NotImplementedException();
         }
 
-        public bool Edit(EditStateModel command)
+        public Task<bool> Edit(EditStateModel command)
         {
             throw new NotImplementedException();
         }
 
-        public bool ExistTitleForCreate(string title)
+        public Task<bool> ExistTitleForCreate(string title)
         {
             throw new NotImplementedException();
         }
 
-        public bool ExistTitleForEdit(string title, int id)
+        public Task<bool> ExistTitleForEdit(string title, int id)
         {
             throw new NotImplementedException();
         }
 
-        public List<StateViewModel> GetAll()
+        public Task<List<StateViewModel>> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public EditStateModel GetStateForEdit(int id)
+        public Task<EditStateModel> GetStateForEdit(int id)
         {
             throw new NotImplementedException();
         }
