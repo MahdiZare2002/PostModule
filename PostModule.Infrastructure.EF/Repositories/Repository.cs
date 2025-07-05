@@ -1,11 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PostModule.Domain.IRepositories;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PostModule.Infrastructure.EF.Repositories
 {
@@ -19,14 +14,14 @@ namespace PostModule.Infrastructure.EF.Repositories
         public async Task<bool> CreateAsync(TEntity entity)
         {
             _context.Add<TEntity>(entity);
-            return await _context.SaveChangesAsync() > 0 ? true : false;
-            
+            return await SaveAsync();
+
         }
 
         public async Task<bool> DeleteAsync(TEntity entity)
         {
             _context.Remove<TEntity>(entity);
-            return await _context.SaveChangesAsync() > 0 ? true : false;
+            return await SaveAsync();
         }
 
         public async Task<IEnumerable<TEntity>> GetAllAsync()
@@ -59,10 +54,9 @@ namespace PostModule.Infrastructure.EF.Repositories
             return await _context.Set<TEntity>().AnyAsync(expression);
         }
 
-        public async Task<bool> UpdateAsync(TEntity entity)
+        public async Task<bool> SaveAsync()
         {
-            _context.Update<TEntity>(entity);
-            return await _context.SaveChangesAsync() > 0 ? true : false;
+            return await _context.SaveChangesAsync() > 0;
         }
     }
 }
