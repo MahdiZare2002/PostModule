@@ -34,7 +34,7 @@ namespace PostModule.Infrastructure.EF.Repositories
             return await _context.Set<TEntity>().Where(expression).ToListAsync();
         }
 
-        public IQueryable<TEntity> GetAllByQueryAsync(Expression<Func<TEntity, bool>> expression)
+        public IQueryable<TEntity> GetAllByQuery(Expression<Func<TEntity, bool>> expression)
         {
             return _context.Set<TEntity>().Where(expression).AsQueryable();
         }

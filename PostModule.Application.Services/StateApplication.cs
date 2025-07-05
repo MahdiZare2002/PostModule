@@ -31,7 +31,7 @@ namespace PostModule.Application.Services
 
         public async Task<bool> ExistTitleForEdit(string title, int id)
         {
-            return await _stateRepository.IsExistAsync(s => s.Title == title && s.Id == id);
+            return await _stateRepository.IsExistAsync(s => s.Title == title && s.Id != id);
         }
 
         public List<StateViewModel> GetAll()

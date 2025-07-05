@@ -6,7 +6,7 @@ namespace PostModule.Domain.IRepositories
     {
         Task<IEnumerable<TEntity>> GetAllAsync();
         Task<IEnumerable<TEntity>> GetAllByAsync(Expression<Func<TEntity, bool>> expression);
-        IQueryable<TEntity> GetAllByQueryAsync(Expression<Func<TEntity, bool>> expression);
+        IQueryable<TEntity> GetAllByQuery(Expression<Func<TEntity, bool>> expression);
         IQueryable<TEntity> GetAllQuery();
         Task<TEntity> GetByIdAsync(TKey id);
         Task<bool> CreateAsync(TEntity entity);
