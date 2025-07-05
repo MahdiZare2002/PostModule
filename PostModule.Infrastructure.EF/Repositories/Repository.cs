@@ -49,7 +49,7 @@ namespace PostModule.Infrastructure.EF.Repositories
             return await _context.FindAsync<TEntity>(id);
         }
 
-        public async Task<bool> IsExist(Expression<Func<TEntity, bool>> expression)
+        public async Task<bool> IsExistAsync(Expression<Func<TEntity, bool>> expression)
         {
             return await _context.Set<TEntity>().AnyAsync(expression);
         }

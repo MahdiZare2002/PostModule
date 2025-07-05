@@ -11,7 +11,7 @@ namespace PostModule.Domain.IRepositories
         Task<TEntity> GetByIdAsync(TKey id);
         Task<bool> CreateAsync(TEntity entity);
         Task<bool> DeleteAsync(TEntity entity);
-        Task<bool> IsExist(Expression<Func<TEntity, bool>> expression);
+        Task<bool> IsExistAsync(Expression<Func<TEntity, bool>> expression);
         Task<bool> SaveAsync();
     }
 }
