@@ -1,4 +1,5 @@
 ﻿using PostModule.Domain.Common;
+using PostModule.Domain.Enums;
 using PostModule.Domain.StateEntity;
 
 namespace PostModule.Domain.CityEntity
@@ -7,16 +8,16 @@ namespace PostModule.Domain.CityEntity
     {
         public string Title { get; set; }
         public int StateId { get; set; }
-        public bool Status { get; set; }
+        public CityStatus Status { get; set; }
         public State State { get; set; }
 
-        public City(int stateId, string title, bool cityStatus = true)
+        public City(int stateId, string title, CityStatus cityStatus)
         {
             Title = title;
             StateId = stateId;
             Status = cityStatus;
         }
-        public void Edit(string title, bool status = true)
+        public void Edit(string title, CityStatus status)
         {
             Title = title;
             Status = status;
@@ -24,15 +25,15 @@ namespace PostModule.Domain.CityEntity
         }
         public void IsTehran()
         {
-            Status = true;
+            Status = CityStatus.isTehran;
         }
         public void IsCenter()
         {
-            Status = true;
+            Status = CityStatus.isCenter;
         }
-        public void INotCenterOrTehran()
+        public void IsNormal()
         {
-            Status = true;
+            Status = CityStatus.isNormal;
         }
     }
 }

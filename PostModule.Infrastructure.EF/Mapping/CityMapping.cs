@@ -1,13 +1,8 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using PostModule.Domain.CityEntity;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace PostModule.Infrastructure.EF.Mapping
+namespace PostModule.Infrastructure.Mapping
 {
     public class CityMapping : IEntityTypeConfiguration<City>
     {

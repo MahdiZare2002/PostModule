@@ -2,7 +2,7 @@
 using PostModule.Domain.IRepositories;
 using System.Linq.Expressions;
 
-namespace PostModule.Infrastructure.EF.Repositories
+namespace PostModule.Infrastructure.Repositories
 {
     public class Repository<TKey, TEntity> : IRepository<TKey, TEntity> where TEntity : class
     {

@@ -23,7 +23,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\PostModule.Application.Services\PostModule.Application.Services.csproj" />
+    <ProjectReference Include="..\PostModule.Application\PostModule.Application.csproj" />
+    <ProjectReference Include="..\PostModule.Domain\PostModule.Domain.csproj" />
   </ItemGroup>
 
 </Project>

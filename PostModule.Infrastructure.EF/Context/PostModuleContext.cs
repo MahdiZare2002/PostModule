@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using PostModule.Domain.CityEntity;
 using PostModule.Domain.StateEntity;
-using PostModule.Infrastructure.EF.Mapping;
+using PostModule.Infrastructure.Mapping;
 
-namespace PostModule.Infrastructure.EF.Context
+namespace PostModule.Infrastructure.Context
 {
     public class PostModuleContext : DbContext
     {

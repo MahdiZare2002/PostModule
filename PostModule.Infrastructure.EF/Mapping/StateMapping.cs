@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using PostModule.Domain.StateEntity;
 
-namespace PostModule.Infrastructure.EF.Mapping
+namespace PostModule.Infrastructure.Mapping
 {
     public class StateMapping : IEntityTypeConfiguration<State>
     {
