@@ -24,7 +24,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\PostModule.Application\PostModule.Application.csproj" />
-    <ProjectReference Include="..\PostModule.Domain\PostModule.Domain.csproj" />
   </ItemGroup>
 
 </Project>
