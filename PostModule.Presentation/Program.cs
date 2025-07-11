@@ -1,0 +1,39 @@
+using Microsoft.EntityFrameworkCore;
+using PostModule.Infrastructure.Context;
+using PostModule.Infrastructure.Extensions;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// Add connection string
+var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+
+// Add Db Context
+builder.Services.AddDbContext<PostModuleContext>(options =>
+{
+    options.UseSqlServer(connectionString);
+});
+
+builder.Services.AddRepositories();
+// Add services to the container.
+
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+// Configure the HTTP request pipeline.
+if (app.Environment.IsDevelopment())
+{
+    app.UseSwagger();
+    app.UseSwaggerUI();
+}
+
+app.UseHttpsRedirection();
+
+app.UseAuthorization();
+
+app.MapControllers();
+
+app.Run();

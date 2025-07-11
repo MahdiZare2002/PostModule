@@ -11,6 +11,8 @@ namespace PostModule.Domain.CityEntity
         public CityStatus Status { get; set; }
         public State State { get; set; }
 
+        public City() { }
+
         public City(int stateId, string title, CityStatus cityStatus)
         {
             Title = title;
