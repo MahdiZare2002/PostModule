@@ -1,6 +1,10 @@
+using Microsoft.AspNetCore.Mvc.ApiExplorer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using PostModule.Infrastructure.Context;
 using PostModule.Infrastructure.Extensions;
+using PostModule.Presentation.Utility;
+using Swashbuckle.AspNetCore.SwaggerGen;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -17,9 +21,24 @@ builder.Services.AddRepositories();
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
+#region Versioning
+builder.Services.AddApiVersioning(option =>
+{
+    option.DefaultApiVersion = new Microsoft.AspNetCore.Mvc.ApiVersion(1, 0);
+    option.AssumeDefaultVersionWhenUnspecified = true;
+    option.ReportApiVersions = true;
+});
+
+builder.Services.AddVersionedApiExplorer(x =>
+{
+    x.GroupNameFormat = "'v'VVVV";
+});
+#endregion
+#region Swagger
+builder.Services.AddTransient<IConfigureOptions<SwaggerGenOptions>, SwaggerPostModuleDocument>();
 builder.Services.AddSwaggerGen();
+#endregion
+
 
 var app = builder.Build();
 
@@ -27,7 +46,17 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(x =>
+    {
+        var provider = app.Services.CreateScope().ServiceProvider
+        .GetRequiredService<IApiVersionDescriptionProvider>();
+
+        foreach (var item in provider.ApiVersionDescriptions)
+        {
+            x.SwaggerEndpoint($"/swagger/{item.GroupName}/swagger.json", item.GroupName.ToString());
+        }
+        x.RoutePrefix = "";
+    });
 }
 
 app.UseHttpsRedirection();

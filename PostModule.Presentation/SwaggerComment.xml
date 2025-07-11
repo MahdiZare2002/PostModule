@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<doc>
+	<assembly>
+		<name>PostModule.Peresantation</name>
+	</assembly>
+	<members>
+		<member name="M:PostModule.Peresantation.Controllers.StateController.GetAll">
+			<summary>
+				دریافت لیست استان ها به همره شهرهای آن و کد شهر
+			</summary>
+			<returns></returns>
+		</member>
+	</members>
+</doc>
