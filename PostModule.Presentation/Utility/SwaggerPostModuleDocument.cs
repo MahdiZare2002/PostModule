@@ -24,8 +24,6 @@ namespace PostModule.Presentation.Utility
       });
             }
 
-            var pathComment = Path.Combine(AppContext.BaseDirectory, "SwaggerComment.xml");
-            options.IncludeXmlComments(pathComment);
         }
     }
 }

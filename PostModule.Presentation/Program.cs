@@ -18,6 +18,7 @@ builder.Services.AddDbContext<PostModuleContext>(options =>
 });
 
 builder.Services.AddRepositories();
+builder.Services.AddServices();
 // Add services to the container.
 
 builder.Services.AddControllers();
@@ -55,7 +56,7 @@ if (app.Environment.IsDevelopment())
         {
             x.SwaggerEndpoint($"/swagger/{item.GroupName}/swagger.json", item.GroupName.ToString());
         }
-        x.RoutePrefix = "";
+        x.RoutePrefix = "Swagger";
     });
 }
 
