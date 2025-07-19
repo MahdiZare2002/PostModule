@@ -4,6 +4,8 @@ using PostModule.Application.Interfaces;
 
 namespace PostModule.Presentation.Controllers;
 
+[Route("api/v{version:apiVersion}/Post")]
+[ApiController]
 public class PostController : Controller
 {
     private readonly IPostService _postService;
@@ -20,8 +22,8 @@ public class PostController : Controller
         return CreatedAtAction(nameof(GetById), new { id = postId }, postId);
     }
 
-    [HttpGet($"{{{nameof(id)}:int}}")]
-    public async Task<IActionResult> GetById(int id)
+    [HttpGet("id")]
+    public IActionResult GetById(int id)
     {
         return Ok();
     }

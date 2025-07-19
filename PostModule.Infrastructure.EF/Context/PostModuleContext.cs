@@ -21,6 +21,8 @@ namespace PostModule.Infrastructure.Context
         {
             modelBuilder.ApplyConfiguration(new StateMapping());
             modelBuilder.ApplyConfiguration(new CityMapping());
+            modelBuilder.ApplyConfiguration(new PostMapping());
+            modelBuilder.ApplyConfiguration(new PostPriceMapping());
             base.OnModelCreating(modelBuilder);
         }
     }
